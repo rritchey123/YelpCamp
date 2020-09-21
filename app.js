@@ -40,12 +40,20 @@ passport.deserializeUser(User.deserializeUser());
 //===seed DB=====
 //seedDB();
 
-mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+
+mongoose.connect("mongodb+srv://test_user:Madeltu0106!@cluster0.5gxre.mongodb.net/<dbname>?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
+
+// mongoose.connect('mongodb://localhost:27017/yelp_camp', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+// .then(() => console.log('Connected to DB!'))
+// .catch(error => console.log(error.message));
 
 app.use(express.static(__dirname+"/public"));
 
